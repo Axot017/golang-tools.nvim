@@ -1,0 +1,5 @@
+vim.api.nvim_create_user_command("GoIfErr", require("golang-tools.iferr").iferr, {})
+vim.api.nvim_create_user_command("GoTestAdd", require("golang-tools.test").add_test, {})
+vim.api.nvim_create_user_command("GoTagAdd", function(opts)
+  require("golang-tools.tags").add(unpack(opts.fargs))
+end, { nargs = '?' })
